@@ -297,7 +297,6 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
 
                                 listAdapter.insert(text, 0);
 
-                                /*
                                 // Tourettes' code
                                 Pattern pattern;
                                 Matcher matcher;
@@ -359,7 +358,6 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                                 previousX = x;
                                 previousY = y;
                                 previousZ = z;
-                                */
 
                             } catch (Exception e) {
                                 Log.e(TAG, e.toString());
