@@ -100,6 +100,9 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
     private int previousZ = 0;
     private boolean recentlyBeeped = false;
 
+    private static final int Y_AXIS_MIN = 100;
+    private static final int Y_AXIS_MAX = 500;
+
     private static int TRIGGER_THRESHOLD = 45;
 
     @Override
@@ -121,8 +124,8 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
         graph = (GraphView) findViewById(R.id.graphView);
 
         graph.getViewport().setYAxisBoundsManual(true);
-        graph.getViewport().setMinY(200);
-        graph.getViewport().setMaxY(500);
+        graph.getViewport().setMinY(Y_AXIS_MIN);
+        graph.getViewport().setMaxY(Y_AXIS_MAX);
 
         /*
         graph.getViewport().setScalable(false);
