@@ -105,6 +105,8 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
 
     private static int TRIGGER_THRESHOLD = 45;
 
+    static int count = 0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,8 +151,6 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
         //btnSend=(Button) findViewById(R.id.sendButton);
         //edtMessage = (EditText) findViewById(R.id.sendText);
         service_init();
-
-     
        
         // Handle Disconnect & Connect button
         btnConnectDisconnect.setOnClickListener(new View.OnClickListener() {
@@ -293,74 +293,11 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                     runOnUiThread(new Runnable() {
                         public void run() {
                             try {
+                                // End of message is signified by 13
+                                // Beginning of message is signified by 10
+                                System.out.print("receiving "); System.out.println(txValue.length);
                                 String text = new String(txValue, "UTF-8");
-                                //String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                                //listAdapter.add("[" + currentDateTimeString + "] RX: " + text);
-                                //messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
-
-                                listAdapter.insert(text, 0);
-
-                                // Tourettes' code
-                                Pattern pattern;
-                                Matcher matcher;
-                                //Initial values are irrelivant. Find a better way to write this.
-                                int x = 123;
-                                int y = 123;
-                                int z = 123;
-
-                                pattern = Pattern.compile("\\d\\d\\dx");
-                                matcher = pattern.matcher(text);
-                                while (matcher.find()) {
-                                    String value = matcher.group().substring(0, 3);
-                                    //listAdapter.add(value);
-                                    x = Integer.parseInt(value);
-                                    DataPoint point = new DataPoint(++time_index, x);
-                                    seriesX.appendData(point, true, 20);
-                                }
-
-                                pattern = Pattern.compile("\\d\\d\\dy");
-                                matcher = pattern.matcher(text);
-                                while (matcher.find()) {
-                                    String value = matcher.group().substring(0, 3);
-                                    //listAdapter.add(value);
-                                    y = Integer.parseInt(value);
-                                    DataPoint point = new DataPoint(++time_index, y);
-                                    seriesY.appendData(point, true, 20);
-                                }
-
-                                pattern = Pattern.compile("\\d\\d\\dz");
-                                matcher = pattern.matcher(text);
-                                while (matcher.find()) {
-                                    String value = matcher.group().substring(0, 3);
-                                    //listAdapter.add(value);
-                                    z = Integer.parseInt(value);
-                                    DataPoint point = new DataPoint(++time_index, z);
-                                    seriesZ.appendData(point, true, 20);
-                                }
-
-                                if (Math.abs(x - previousX) > TRIGGER_THRESHOLD ||
-                                        Math.abs(y - previousY) > TRIGGER_THRESHOLD ||
-                                        Math.abs(z - previousZ) > TRIGGER_THRESHOLD) {
-                                    if (!recentlyBeeped) {
-
-                                        final ToneGenerator tg = new ToneGenerator(AudioManager.STREAM_NOTIFICATION, 100);
-                                        tg.startTone(ToneGenerator.TONE_PROP_BEEP);
-
-                                        // Get instance of Vibrator from current Context
-                                        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                                        // Vibrate for 400 milliseconds
-                                        v.vibrate(400);
-
-                                        listAdapter.add("beep");
-                                        recentlyBeeped = true;
-                                    }
-                                } else {
-                                    recentlyBeeped = false;
-                                }
-
-                                previousX = x;
-                                previousY = y;
-                                previousZ = z;
+                                System.out.println(++count);
 
                             } catch (Exception e) {
                                 Log.e(TAG, e.toString());
