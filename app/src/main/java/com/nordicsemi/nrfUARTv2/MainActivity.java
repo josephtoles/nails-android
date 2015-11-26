@@ -302,25 +302,20 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                                 String text = new String(txValue, "UTF-8").replace("\r\n", "");  // Original text ends with "\r\n"
                                 Matcher matcher = good_data_pattern.matcher(text);
 
-                                System.out.println("Receiving text \"" + text + "\" length=" + txValue.length);
+                                System.out.println("Message #" + ++count + ": Receiving text \"" + text + "\" length=" + txValue.length);
                                 listAdapter.insert(text, 0);
 
                                 if (matcher.matches()) {
+                                    // Converts numbers back into m/s^2
                                     double[] readings = {
                                             Integer.parseInt(matcher.group(1)) / 10.0,
                                             Integer.parseInt(matcher.group(2)) / 10.0,
                                             Integer.parseInt(matcher.group(3)) / 10.0
                                     };
-                                    System.out.println(readings[0]);
                                 } else {
                                     listAdapter.insert("Could not match", 0);
                                     System.out.println("Could not match");
                                 }
-
-                                //text = text.replace("AT+BLEUARTTX=", fwon"");
-                                System.out.println("Text is " + text + "[period]");
-                                System.out.println(++count);
-
                             } catch (
                                     Exception e
                                     )
