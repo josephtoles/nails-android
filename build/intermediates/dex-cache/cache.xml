@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
+        jar="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/pre-dexed/debug/classes-fcd44dd04ff174b9cde87c647b5d4d510904404f.jar" />
+    </item>
+    <item
+        jar="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-47211201bacc4d5a863ed3a2df6d93ab9fc3f8bd.jar" />
+    </item>
+    <item
+        jar="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/pre-dexed/debug/classes-2983dbc8e1221fd8fe673a73bba7f4ccdbd6f195.jar" />
+    </item>
+    <item
+        jar="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
+        <dex dex="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/pre-dexed/debug/classes-5479b0f21dcd69a5c61c9f0702831eb4ac081dd2.jar" />
+    </item>
+    <item
         jar="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
         <dex dex="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-0cff4617764f46618634738217b02b5495272826.jar" />
+    </item>
+    <item
+        jar="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/home/joseph/slightlyrobot/android/nails-android-app/app/build/intermediates/pre-dexed/debug/classes-3ba741b1d7aaf16c753a8dc7a85cc293f49e70b5.jar" />
     </item>
     <item
         jar="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
@@ -23,25 +58,11 @@
         <dex dex="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/pre-dexed/debug/classes-89b49e98c58e9a656f98607ad25c664b62406539.jar" />
     </item>
     <item
-        jar="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
-        <dex dex="/home/joseph/slightlyrobot/android/tourettes-android-app/app/build/intermediates/pre-dexed/debug/classes-2983dbc8e1221fd8fe673a73bba7f4ccdbd6f195.jar" />
-    </item>
-    <item
         jar="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
         jumboMode="false"
         revision="23.0.0"
         sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
         <dex dex="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-7ea801ab7a7fdde73dae240716d9fcfc7caf46de.jar" />
-    </item>
-    <item
-        jar="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/exploded-aar/com.jjoe64/graphview/4.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="37bf8de5b4f9e7e93006db783b9b3168e32e38e9">
-        <dex dex="/home/joseph/slightlyrobot/android/boxing-android-app/app/build/intermediates/pre-dexed/debug/classes-fcd44dd04ff174b9cde87c647b5d4d510904404f.jar" />
     </item>
     <item
         jar="/home/joseph/.android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"

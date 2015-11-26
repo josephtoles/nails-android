@@ -291,22 +291,30 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                     runOnUiThread(new Runnable() {
                         public void run() {
                             try {
-                                // End of message is signified by 13
-                                // Beginning of message is signified by 10
-                                System.out.print("receiving "); System.out.println(txValue.length);
-                                String text = new String(txValue, "UTF-8");
-                                //text = text.replace("\n", "");
-                                //text = text.replace("AT+BLEUARTTX=", fwon"");
-                                listAdapter.insert(text, 0);
-                                System.out.println("Text is " + text);
-                                System.out.println(++count);
-
-                                final Pattern good_data_pattern = Pattern.compile("x[+-]\\d{3}y[+-]\\d{3}z[+-]\\d{3}");
+                                /*
+                                 * SERIAL COMMUNICATION NOTES
+                                 * End of message is signified by 13
+                                 * Beginning of message is signified by 10
+                                 *
+                                 * //System.out.print("receiving "); System.out.println(txValue.length);
+                                 */
+                                final Pattern good_data_pattern = Pattern.compile("x[+-]\\d{3}y[+-]\\d{3}z[+-]\\d{3}");  // Move to top?
+                                String text = new String(txValue, "UTF-8").replace("\r\n", "");  // Original text ends with "\r\n"
                                 boolean matches = good_data_pattern.matcher(text).matches();
-                                if (matches)
-                                    listAdapter.insert("matches", 0);
-                                else
-                                    listAdapter.insert("string" + text + "doesn't match", 0);
+
+                                System.out.println("Receiving text \"" + text + "\" length=" + txValue.length);
+                                listAdapter.insert(text, 0);
+
+                                if (matches) {
+
+                                } else {
+                                    listAdapter.insert("Could not match", 0);
+                                    System.out.println("Could not match");
+                                }
+
+                                //text = text.replace("AT+BLEUARTTX=", fwon"");
+                                System.out.println("Text is " + text + "[period]");
+                                System.out.println(++count);
 
                             } catch (Exception e) {
                                 Log.e(TAG, e.toString());
