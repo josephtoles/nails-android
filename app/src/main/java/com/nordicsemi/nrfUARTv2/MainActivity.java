@@ -296,7 +296,7 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                                 System.out.print("receiving "); System.out.println(txValue.length);
                                 String text = new String(txValue, "UTF-8");
                                 //text = text.replace("\n", "");
-                                //text = text.replace("AT+BLEUARTTX=", "");
+                                //text = text.replace("AT+BLEUARTTX=", fwon"");
                                 listAdapter.insert(text, 0);
                                 System.out.println("Text is " + text);
                                 System.out.println(++count);
