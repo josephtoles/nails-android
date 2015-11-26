@@ -298,15 +298,20 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                                  *
                                  * //System.out.print("receiving "); System.out.println(txValue.length);
                                  */
-                                final Pattern good_data_pattern = Pattern.compile("x[+-]\\d{3}y[+-]\\d{3}z[+-]\\d{3}");  // Move to top?
+                                final Pattern good_data_pattern = Pattern.compile("x[+-](\\d{3})y[+-](\\d{3})z[+-](\\d{3})");  // Move to top?
                                 String text = new String(txValue, "UTF-8").replace("\r\n", "");  // Original text ends with "\r\n"
-                                boolean matches = good_data_pattern.matcher(text).matches();
+                                Matcher matcher = good_data_pattern.matcher(text);
 
                                 System.out.println("Receiving text \"" + text + "\" length=" + txValue.length);
                                 listAdapter.insert(text, 0);
 
-                                if (matches) {
-
+                                if (matcher.matches()) {
+                                    double[] readings = {
+                                            Integer.parseInt(matcher.group(1)) / 10.0,
+                                            Integer.parseInt(matcher.group(2)) / 10.0,
+                                            Integer.parseInt(matcher.group(3)) / 10.0
+                                    };
+                                    System.out.println(readings[0]);
                                 } else {
                                     listAdapter.insert("Could not match", 0);
                                     System.out.println("Could not match");
@@ -316,7 +321,11 @@ public class MainActivity extends Activity implements RadioGroup.OnCheckedChange
                                 System.out.println("Text is " + text + "[period]");
                                 System.out.println(++count);
 
-                            } catch (Exception e) {
+                            } catch (
+                                    Exception e
+                                    )
+
+                            {
                                 Log.e(TAG, e.toString());
                             }
                         }
